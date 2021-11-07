@@ -1,11 +1,9 @@
 import { PagingOptions } from './../models/paging-options';
-
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 import { map } from 'rxjs/operators';
-import { BehaviorSubject } from 'rxjs';
-import { Item } from '../models/item';
+
 
 const redditDataUrl = environment.apiUrl;
 
@@ -15,10 +13,8 @@ const redditDataUrl = environment.apiUrl;
 
 export class ItemListService {
 
-  private itemsSubj = new BehaviorSubject<any>(null);
-  constructor(private http: HttpClient) { }
 
-  items$ = this.itemsSubj.asObservable();
+  constructor(private http: HttpClient) { }
 
   fetchItems(pagingOptions: PagingOptions) {
     let params: HttpParams = new HttpParams({
@@ -36,7 +32,7 @@ export class ItemListService {
       params = params.append('count', pagingOptions.count);
     }
 
-    return this.http.get<any>(redditDataUrl + 'animals.json', { params }).pipe(
+    return this.http.get<any>(redditDataUrl + 'poland.json', { params }).pipe(
       map(x => {
         return {
           after: x.data.after,
@@ -56,6 +52,5 @@ export class ItemListService {
           })
         }
       }));
-
   }
 }

@@ -1,4 +1,4 @@
-import { ItemListResolver } from './../resolvers/item-list.resolver';
+
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -9,9 +9,8 @@ const routes: Routes = [{
   component: HomeComponent,
 },
 {
-  path: 'item-detail/:id',
-  component: ItemDetailComponent,
-  // resolve: { items: ItemListResolver }
+  path: 'item-detail',
+  component: ItemDetailComponent
 }];
 
 @NgModule({

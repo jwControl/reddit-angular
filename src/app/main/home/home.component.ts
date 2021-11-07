@@ -39,8 +39,6 @@ export class HomeComponent implements OnInit {
   }
 
   private retrieveData(pagingOptions: PagingOptions) {
-    // this.itemsService.fetchItems(pagingOptions);
-    // this.fetchedItems$ = this.itemsService.items$;
     this.fetchedItems$ = this.itemsService.fetchItems(pagingOptions).pipe(
       catchError(() => {
         window.alert("Error occured during fetching items");

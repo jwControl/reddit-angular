@@ -29,12 +29,10 @@ export class ItemListComponent implements OnInit {
   }
 
   handlePageLimit($event: number) {
-    console.log($event)
     this.pageLimitEvent.emit($event);
   }
 
   handleChange($event: PagingOptions) {
-    console.log($event.before, this.items[0]?.name)
     this.pagingOptionsEvent.emit($event);
   }
 }

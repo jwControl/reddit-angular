@@ -1,1 +1,18 @@
-cos
+<div class="container-details">
+    <div class="card p-3 mt-2">
+        <div class="m-2">
+            <div class="d-flex justify-content-between align-items-center">
+                <h5 class="mb-1" id="title">{{item.title}} </h5>
+            </div>
+        </div>
+        <div class="details">
+            <ng-container *ngIf="item.selftext; else noText">
+                {{item.selftext}}
+            </ng-container>
+            <ng-template #noText>
+                Empty selft text. It is a place where to put default self text.
+            </ng-template>
+        </div>
+
+    </div>
+</div>
