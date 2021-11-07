@@ -37,9 +37,7 @@ export class ListNavigationComponent implements OnInit {
     this.queryParams.before = null;
     this.queryParams.limit = +this.pagingOptions.limit;
     this.queryParams.after = this.pagingOptions.after;
-    console.log(this.pagingOptions.count)
-    this.queryParams.count = this.pagingOptions.count + this.queryParams.limit + 1;
-    console.log(this.queryParams.count)
+    this.queryParams.count = this.pagingOptions.count + this.queryParams.limit;
     this.changePaginationOption.emit(this.queryParams);
   }
 
@@ -51,7 +49,13 @@ export class ListNavigationComponent implements OnInit {
     this.queryParams.after = null;
     this.queryParams.limit = this.pagingOptions.limit;
     this.queryParams.before = this.pagingOptions.before;
-    this.queryParams.count = this.pagingOptions.count - this.pagingOptions.limit;
+    if (this.pagingOptions.count - this.queryParams.limit > this.queryParams.limit) {
+      this.queryParams.count = this.pagingOptions.count - this.pagingOptions.limit;
+    } else {
+      this.queryParams.count = this.pagingOptions.count + 1;
+
+    }
+
     this.changePaginationOption.emit(this.queryParams);
   }
 

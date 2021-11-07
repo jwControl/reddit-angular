@@ -1,6 +1,12 @@
-# RedditCase
-
+# RedditCase - starting
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.13.
+Node version: 16.3.0.
+To start app: 
+    - install newest version of node.js
+    - download repo or git clone: https://github.com/jwControl/reddit-angular
+    - use commend: npm install
+    - open app: ng serve
+
 
 ## Development server
 
