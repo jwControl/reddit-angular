@@ -27,8 +27,8 @@ export class ItemDetailComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    // remove selftext from localStorage
-    localStorage.removeItem('selftext');
+    // remove item from localStorage
+    localStorage.removeItem('item');
   }
 
 
