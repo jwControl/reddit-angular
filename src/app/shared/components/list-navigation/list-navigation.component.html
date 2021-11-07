@@ -1,0 +1,15 @@
+<div class="row m-0">
+    <div class="col-10 d-flex justify-content-start">
+        <button type="button" class="btn btn-outline-primary" (click)="previousPage()"
+            [disabled]="pagingOptions.before===undefined || pagingOptions.before === null">Previous
+            page</button>
+        <button type="button" class="btn btn-outline-primary ms-4" (click)="nextPage()">Next page</button>
+    </div>
+    <div class="col-2 d-flex justify-content-end">
+        <select class="form-select select-size" (change)='changedSelection(selected)' [(ngModel)]="selected"
+            name="selected">
+            <option *ngFor="let option of options" [value]="option">{{option}}
+            </option>
+        </select>
+    </div>
+</div>

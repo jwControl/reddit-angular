@@ -1,0 +1,21 @@
+<div class="container-fluid text-center container-list">
+    <div class="row">
+        <h3 class="m-3">Welcome to my reddit case solutions, make pleasure of viewing my extreme rocket science !</h3>
+        <div class="col-sm-2 sidenav"></div>
+        <div class="col-sm-8">
+            <ng-container *ngIf="fetchedItems$ | async as reddit; else other">
+                <app-item-list [items]="reddit.items" [limit]="limit" [count]="count" [after]="reddit.after"
+                    [before]="reddit.before" (pageLimitEvent)="handleLimitPageChange($event)"
+                    (pagingOptionsEvent)="handlePagingOptionsChange($event)">
+                </app-item-list>
+            </ng-container>
+        </div>
+        <div class="col-sm-2 sidenav"> </div>
+    </div>
+</div>
+
+<ng-template #other>
+    <div fxLayout="row" fxLayoutAlign="center" style="margin-top: 60px;">
+        Loading data...
+    </div>
+</ng-template>
