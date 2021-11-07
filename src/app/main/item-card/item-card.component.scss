@@ -1,32 +1,18 @@
-.card {
-    border: none;
-    background-color: #252836;
-    color: #fff;
-    border-radius: 12px
-}
+@import '../../../styles/variables';
 
-.user-timing {
-    right: 9px;
-    bottom: 9px;
-    color: #fff
-}
-
-.views-content {
-    color: #606271
+.card-text-color {
+    color: $card-text-color;
 }
 
 .views {
-    font-size: 12px
+    font-size: 12px;
 }
 
-.days-ago {
-    color: #606271
-}
 a {
     text-decoration: none;
      &:hover{
          #card{
-            border: 2px solid black;
+            border: 2px solid $card-border-color;
          }
          #title{
              text-decoration: underline;

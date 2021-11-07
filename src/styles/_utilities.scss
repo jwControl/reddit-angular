@@ -1,0 +1,8 @@
+@import '_variables';
+
+.card {
+    border: none;
+    background-color: $card-background-color;
+    color: $card-text-main-color;
+    border-radius: 12px;
+}

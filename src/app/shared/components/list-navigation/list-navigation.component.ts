@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { PagingOptions } from 'src/app/models/paging-options';
 
 @Component({
@@ -12,9 +12,8 @@ export class ListNavigationComponent implements OnInit {
   @Output() pageLimitEvent = new EventEmitter<number>();
   @Input() pagingOptions: PagingOptions;
   queryParams: PagingOptions = new PagingOptions();
-  options: number[] = [5, 10, 15];
+  options: number[] = [5, 10, 25];
   selected: number;
-  counter = 0;
 
   constructor() {
 

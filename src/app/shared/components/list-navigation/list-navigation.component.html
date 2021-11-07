@@ -1,8 +1,9 @@
 <div class="row m-0">
     <div class="col-10 d-flex justify-content-start">
-        <button type="button" class="btn btn-outline-primary" (click)="previousPage()"
-            [disabled]="pagingOptions.before===undefined || pagingOptions.before === null">Previous</button>
-        <button type="button" class="btn btn-outline-primary ms-2" (click)="nextPage()">Next</button>
+        <button type="button" class="btn btn-outline-dark" (click)="previousPage()"
+            [disabled]="pagingOptions.before === null">Previous</button>
+        <button type="button" class="btn btn-outline-dark ms-2" (click)="nextPage()"
+            [disabled]="pagingOptions.after === null">Next</button>
     </div>
     <div class="col-2 d-flex justify-content-end">
         <select class="form-select select-size" (change)='changedSelection(selected)' [(ngModel)]="selected"

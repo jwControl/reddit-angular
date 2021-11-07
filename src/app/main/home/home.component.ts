@@ -19,10 +19,12 @@ export class HomeComponent implements OnInit {
   constructor(private itemsService: ItemListService) { }
 
   ngOnInit(): void {
+    //first fetching data with default page limit
     this.retrieveData(this.pagingOptions);
   }
 
   handleLimitPageChange($event: number) {
+    // create new object in order to pass only page limit 
     const paging = new PagingOptions();
     paging.limit = $event;
     this.limit = $event;

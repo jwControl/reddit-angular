@@ -22,6 +22,8 @@ export class ItemListComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
+
+    // create new pagingOptions object from inputs to pass to nav component
     this.pagingOptions.limit = this.limit;
     this.pagingOptions.after = this.after;
     this.pagingOptions.before = this.before;
@@ -32,7 +34,7 @@ export class ItemListComponent implements OnInit {
     this.pageLimitEvent.emit($event);
   }
 
-  handleChange($event: PagingOptions) {
+  handlePaginationChange($event: PagingOptions) {
     this.pagingOptionsEvent.emit($event);
   }
 }
