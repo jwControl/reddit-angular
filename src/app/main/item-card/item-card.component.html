@@ -13,7 +13,7 @@
                                 class="ms-1 views">{{item.score}} Score</span> </div>
                     </div>
                     <div class="d-flex flex-row mt-3">
-                        <ng-container>
+                        <ng-container *ngIf="item.thumbnail !== 'self' && item.thumbnail !== 'default'">
                             <img [src]="item.thumbnail" width="100" class="rounded img-fluid" checkImage>
                         </ng-container>
 
